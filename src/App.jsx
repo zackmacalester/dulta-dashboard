@@ -19,6 +19,7 @@ const App = () => {
     );
     if (match) {
       setAuthenticated(true);
+      localStorage.setItem("dulta-auth", "true");
       setError("");
     } else {
       setError("Invalid username or password");
@@ -100,7 +101,7 @@ const Dashboard = () => {
       const contextLeads = leads.map(lead => `Name: ${lead.name || 'N/A'}, Email: ${lead.email || 'N/A'}, Status: ${lead.status || 'N/A'}${lead.comment ? ', Comment: ' + lead.comment : ''}`).join("\n");
 
       const res = await axios.post(
-        "https://api.openai.com/v1/chat/completions",
+        "https://dulta-assistant.vercel.app/api/chat",
         {
           model: "gpt-4",
           messages: [
@@ -112,7 +113,7 @@ const Dashboard = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${OPENAI_API_KEY}`,
+            Authorization: "" // handled by backend,
           },
         }
       );
