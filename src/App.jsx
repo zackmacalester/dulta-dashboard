@@ -73,10 +73,10 @@ const Dashboard = () => {
   const chatBoxRef = useRef(null);
 
   const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbxkXCpxr8ADcqQl5T0PEiFdL-kNE2dkXBqk1BqDQz4cfe_Rq825-Dhsbiyuj_lh6h_ovw/exec";
-  const OPENAI_API_KEY = "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";
+  const OPENAI_API_KEY = "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"; // Replace with real key
   const OUTLOOK_CLIENT_ID = "aa429976-da75-4a44-9889-50ffb802989e";
   const OUTLOOK_TENANT_ID = "886b7684-abe2-4b92-8cc8-fb833cdf3cbd";
-  const OUTLOOK_REDIRECT_URI = "https://your-production-domain.com";
+  const OUTLOOK_REDIRECT_URI = "https://dulta-dashboard.vercel.app";
 
   const fetchLeads = async () => {
     try {
